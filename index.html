@@ -29,6 +29,9 @@
             box-shadow: inset 0 10px 10px rgb(81, 81, 205);
             content:'';
         }
+        .center{
+            width:70%;
+        }
         .heading{
             font-size: 65px;
             color: white;
@@ -72,10 +75,7 @@
             box-shadow: 0 0 10px black;
             border-radius: 10px;
         }
-        .netflix{
-            position: absolute;
-            top:20px;
-            left:120px;
+        .netflix{  
             width:15%;
         }
         .language{
@@ -93,11 +93,6 @@
             color: black;
             padding: 10px;
         }
-        .top-right{
-            position: absolute;
-            top:35px;
-            right:150px;
-        }
         .signin{
             font-size: 20px;
             font-weight: 600;
@@ -105,10 +100,20 @@
             padding-right: 18px;
             background-color: red;
         }
+        .top{
+            width:100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position:absolute;
+            top:15px;
+            padding-left:30px;
+            padding-right: 20px;
+        }
         .section-2{
             background-color: black;
             width:100vw;
-            min-height:290vh;
+            min-height:300vh;
         }
         .section2-head{
             color: white;
@@ -133,7 +138,7 @@
             margin-left: 10px;
             margin-right: 10px;
             cursor:pointer;
-            transition:0.5s all easse;
+            transition:0.5s all ease;
         }
         .box1::after{
             position:absolute;
@@ -315,6 +320,7 @@
         }
         .footer1{
             margin-top: 30px;
+            width:85%;
         }
         .footer-links{
             margin-top: 40px;
@@ -331,19 +337,59 @@
         .last-line{
             margin-top: 30px;
             font-size: 18px;
+            margin-bottom: 10px;
+            padding: 20px;
+        }
+        @media(max-width:1000px)
+        {
+            .reasons{
+                display:flex;
+                flex-wrap: wrap;
+                width:90%;
+            }
+        }
+        @media(max-width:600px)
+        {
+            .get-started{
+                font-size: 14px;
+                margin-bottom: 50px;
+            }
+        }
+        @media(max-width:700px)
+        {
+            .footer-links{
+                height:400px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- section-1 -->
-     <div class="container-fluid section-1 d-flex justify-content-center align-items-center">
+     <div class="container-fluid section-1 d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex justify-content around align-items-center top">
+            <img src="netflix.png" class="netflix" alt="">
+            <div class="d-flex gap-3 d-none d-lg-flex d-md-flex d-sm-none">
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle py-2 fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-language"></i> English
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">English</a></li>
+                      <li><a class="dropdown-item" href="#">हिंदी</a></li>
+                    </ul>
+                </div>
+               <button type="text"class=" btn btn-danger signin">
+                Sign In
+               </button>
+            </div>
+         </div>
         <div class="center d-flex justify-content-center align-items-center flex-column">
             <h1 class="heading">Unlimited movies, TV</h1>
             <h1 class="heading">shows and more</h1>
             <p class="sub-heading">Starts at ₹149. Cancel at any time.</p><br>
             <p class="line">Ready to watch? Enter your email to create or restart your membership.</p>
             <div class="d-flex input-group gap-3">
-                <div class="form-floating bg-transparent input border rounded-2">
+                <div class="form-floating bg-transparent input border rounded-2 d-none d-lg-flex d-md-flex d-sm-none">
                     <textarea class="form-control bg-transparent text-light" placeholder="Type your emailId"
                         id="floatingTextarea"></textarea>
                     <label for="floatingTextarea" class="text-secondary fw-semibold">Email address</label>
@@ -353,17 +399,7 @@
                 </button>
             </div>
         </div>
-     </div>
-     <img src="netflix.png" class="netflix" alt="">
-     <div class="d-flex top-right gap-3">
-        <select class="language">
-            <option selected>English</option>
-            <option>हिंदी</option>
-        </select>
-        <button type="text"class=" btn btn-danger signin">
-            Sign In
-        </button>
-     </div>
+    </div>
 
     <!-- section-2 -->
      <div class="container-fluid section-2 ">
@@ -468,7 +504,7 @@
         <div class="membership container d-flex justify-content-center align-items-center flex-column">
             <p class="line">Ready to watch? Enter your email to create or restart your membership.</p>
             <div class="d-flex input-group gap-3">
-                <div class="form-floating bg-transparent input border rounded-2">
+                <div class="form-floating bg-transparent input border rounded-2 d-none d-lg-flex d-md-flex d-sm-none">
                     <textarea class="form-control bg-transparent text-light" placeholder="Type your emailId"
                         id="floatingTextarea"></textarea>
                     <label for="floatingTextarea" class="text-secondary fw-semibold">Email address</label>
@@ -497,10 +533,15 @@
                 <u>Contact Us</u>
                 <u>Legal Notices</u>
             </div>
-            <select class="language">
-                <option selected>English</option>
-                <option>हिंदी</option>
-            </select>
+            <div class="dropdown">
+                <button class="btn btn-outline-light dropdown-toggle py-2 fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-language"></i> English
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">English</a></li>
+                  <li><a class="dropdown-item" href="#">हिंदी</a></li>
+                </ul>
+            </div>
             <p class="last-line" style="color:rgb(177, 175, 175);">Netflix India</p>
         </div>
     </div>
